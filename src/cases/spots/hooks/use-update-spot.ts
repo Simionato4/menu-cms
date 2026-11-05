@@ -16,6 +16,7 @@ export function useUpdateSpot() {
         mutationFn: ({ id, payload }: UpdateSpotVariables) => SpotService.update(id, payload),
         onSuccess: () => {
             queryClient.invalidateQueries({ queryKey: ['spots'] })
+            queryClient.invalidateQueries({ queryKey: ['guest-checks'] })
             toast.success('Mesa atualizada.')
         },
         onError: (error) => {
