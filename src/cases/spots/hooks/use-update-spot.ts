@@ -17,6 +17,7 @@ export function useUpdateSpot() {
         onSuccess: () => {
             queryClient.invalidateQueries({ queryKey: ['spots'] })
             queryClient.invalidateQueries({ queryKey: ['guest-checks'] })
+            queryClient.invalidateQueries({ queryKey: ['orders'] })
             toast.success('Mesa atualizada.')
         },
         onError: (error) => {

@@ -16,6 +16,7 @@ export function useUpdateProduct() {
         mutationFn: ({ id, payload }: UpdateProductVariables) => ProductService.update(id, payload),
         onSuccess: () => {
             queryClient.invalidateQueries({ queryKey: ['products'] })
+            queryClient.invalidateQueries({ queryKey: ['orders'] })
             toast.success('Produto atualizado.')
         },
         onError: (error) => {
