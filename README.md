@@ -40,7 +40,7 @@ Pré-requisito: a API do `menu-backend` rodando (por padrão em `http://localhos
 
 | Dependência | Justificativa |
 |---|---|
-| `react-router-dom` | Rotas entre as áreas do CMS (Categorias, Produtos, Mesas, Comandas). |
+| `react-router-dom` | Rotas entre as áreas do CMS (Categorias, Produtos, Mesas, Comandas, Kanban). |
 | `lucide-react` | Biblioteca de ícones usada pelo shadcn/ui. |
 | `@base-ui/react` | Base dos componentes do shadcn/ui no estilo `base-vega`. |
 | `class-variance-authority` | Variantes de estilo dos componentes do shadcn/ui. |
@@ -48,3 +48,4 @@ Pré-requisito: a API do `menu-backend` rodando (por padrão em `http://localhos
 | `tw-animate-css` | Animações usadas pelos componentes do shadcn/ui. |
 | `shadcn` | Fornece o `shadcn/tailwind.css` importado no `index.css` e a CLI que gera os componentes. |
 | `sonner` | Mensagens (toast) de sucesso e de erro após cada ação. |
+| `@dnd-kit/core` | Arrastar e soltar os cartões entre as colunas do Kanban de pedidos (bônus), biblioteca citada como permitida no enunciado. |

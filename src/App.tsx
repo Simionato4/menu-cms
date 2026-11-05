@@ -5,6 +5,7 @@ import { ProductsPage } from "./pages/products-page"
 import { SpotsPage } from "./pages/spots-page"
 import { GuestChecksPage } from "./pages/guest-checks-page"
 import { GuestCheckDetailPage } from "./pages/guest-check-detail-page"
+import { KanbanPage } from "./pages/kanban-page"
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
         <Route path="/spots" element={<SpotsPage />} />
         <Route path="/guest-checks" element={<GuestChecksPage />} />
         <Route path="/guest-checks/:id" element={<GuestCheckDetailPage />} />
+        <Route path="/kanban" element={<KanbanPage />} />
         <Route path="*" element={<Navigate to="/categories" replace />} />
       </Route>
     </Routes>

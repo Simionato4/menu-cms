@@ -4,6 +4,11 @@ import type { OrderDTO, OrderStatus } from "../dtos/order.dto"
 const ENDPOINT = '/orders'
 
 export const OrderService = {
+    async listAll(): Promise<OrderDTO[]> {
+        const result = await api.get<OrderDTO[]>(ENDPOINT)
+        return result.data
+    },
+
     async listByGuestCheck(guestCheckId: string): Promise<OrderDTO[]> {
         const result = await api.get<OrderDTO[]>(ENDPOINT, {
             params: { guestCheckId }

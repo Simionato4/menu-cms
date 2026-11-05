@@ -7,6 +7,7 @@ const NAV_ITEMS = [
     { to: '/products', label: 'Produtos' },
     { to: '/spots', label: 'Mesas' },
     { to: '/guest-checks', label: 'Comandas' },
+    { to: '/kanban', label: 'Kanban' },
 ]
 
 export function Header() {
