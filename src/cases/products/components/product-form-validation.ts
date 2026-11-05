@@ -1,4 +1,4 @@
-export interface ProductFormValues {
+interface ProductFormValues {
     name: string;
     price: string;
     picture: string;

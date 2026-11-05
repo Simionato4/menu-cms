@@ -4,6 +4,19 @@ Painel administrativo (CMS) do Cardápio Digital da hamburgueria **Mater Burguer
 
 O CMS consome a API NestJS do projeto [menu-backend](https://github.com/Simionato4/menu-backend). Nenhum dado é fixo no código: tudo vem da API.
 
+## Funcionalidades
+
+| Área | Rota | O que faz |
+|---|---|---|
+| Categorias | `/categories` | Lista nome, ícone, ordem de exibição e situação; cadastra, edita e exclui com confirmação. |
+| Produtos | `/products` | Lista imagem, nome, categoria, preço em reais e indicadores de vegetariano e novidade; filtra por categoria; cadastra, edita e exclui com confirmação. |
+| Mesas | `/spots` | Lista, cadastra, edita e exclui mesas com confirmação. |
+| Comandas | `/guest-checks` | Lista as comandas em aberto com mesa, data de abertura e total acumulado. |
+| Pedidos da comanda | `/guest-checks/:id` | Mostra os pedidos com itens, subtotais e total, e altera o status de cada pedido. |
+| Kanban (bônus) | `/kanban` | Uma coluna por status; arrastar o cartão grava o novo status na API. |
+
+Todas as telas de leitura tratam carregamento, erro e lista vazia, e toda gravação mostra uma mensagem de sucesso ou de erro.
+
 ## Tecnologias
 
 - Vite + React + TypeScript
@@ -12,9 +25,23 @@ O CMS consome a API NestJS do projeto [menu-backend](https://github.com/Simionat
 - Axios
 - TanStack Query
 
+## Estrutura
+
+```
+src/
+  lib/          instância do Axios, formatação de moeda e data, mensagem de erro da API
+  components/
+    ui/         componentes gerados pelo shadcn/ui
+    layout/     cabeçalho com o menu, layout das páginas e título de página
+    shared/     estados de carregamento, erro e vazio; diálogo de confirmação de exclusão
+  cases/        uma pasta por área (categories, products, spots, guest-checks, orders)
+                com dtos, services (Axios), hooks (TanStack Query) e components
+  pages/        uma página por rota, montando os componentes de cases/
+```
+
 ## Como executar
 
-Pré-requisito: a API do `menu-backend` rodando (por padrão em `http://localhost:3000`).
+Pré-requisito: a API do [menu-backend](https://github.com/Simionato4/menu-backend) rodando (por padrão em `http://localhost:3000`), na versão com os campos de ícone, ordem, vegetariano e novidade, o status `DELIVERED` e as rotas `GET /guest-checks?status=` e `GET /orders?guestCheckId=`.
 
 1. Instale as dependências:
 
