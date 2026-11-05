@@ -1,0 +1,84 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+    --color-brand: var(--brand);
+    --color-brand-foreground: var(--brand-foreground);
+    --font-heading: var(--font-sans);
+    --color-ring: var(--ring);
+    --color-input: var(--input);
+    --color-border: var(--border);
+    --color-destructive: var(--destructive);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-accent: var(--accent);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-muted: var(--muted);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-secondary: var(--secondary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-primary: var(--primary);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-popover: var(--popover);
+    --color-card-foreground: var(--card-foreground);
+    --color-card: var(--card);
+    --color-foreground: var(--foreground);
+    --color-background: var(--background);
+    --radius-sm: calc(var(--radius) * 0.6);
+    --radius-md: calc(var(--radius) * 0.8);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) * 1.4);
+    --radius-2xl: calc(var(--radius) * 1.8);
+    --radius-3xl: calc(var(--radius) * 2.2);
+    --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+    --brand: #193D2D;
+    --brand-foreground: #FFFFFF;
+
+    --background: #F0EBE2;
+    --foreground: #10212A;
+
+    --card: #F5EFE6;
+    --card-foreground: #10212A;
+
+    --popover: #FFFEFB;
+    --popover-foreground: #10212A;
+
+    --primary: #F97316;
+    --primary-foreground: #102A20;
+
+    --secondary: #E8EDE9;
+    --secondary-foreground: #193D2D;
+
+    --muted: #EEEAE2;
+    --muted-foreground: #59615D;
+
+    --accent: #FFF0E2;
+    --accent-foreground: #A63D00;
+
+    --destructive: oklch(0.577 0.245 27.325);
+
+    --border: #E3DED5;
+    --input: #E3DED5;
+    --ring: #A63D00;
+
+    --radius: 0.625rem;
+}
+
+@layer base {
+    * {
+        @apply border-border outline-ring/50;
+    }
+
+    html {
+        @apply font-sans;
+    }
+
+    body {
+        @apply min-h-screen bg-background text-foreground;
+    }
+}
